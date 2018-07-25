@@ -46,8 +46,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
 " Autocomplete
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi', { 'for': 'python'}
+Plug 'shougo/deoplete.nvim'
+Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-clang'
 
 call plug#end()
 
@@ -63,4 +64,8 @@ let g:airline_theme = 'luna'
 let g:neomake_open_list = 2
 let g:neomake_python_enabled_makers = ['flake8']
 
+let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang'
+let g:deoplete#sources#clang#std#cpp = 'c++11'
 let g:deoplete#enable_at_startup = 1
+
